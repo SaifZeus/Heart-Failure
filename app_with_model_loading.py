@@ -27,7 +27,6 @@ except ImportError:
 # ========================
 st.set_page_config(
     page_title="Heart Failure Prediction",
-    page_icon="❤️",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -226,17 +225,17 @@ def validate_input(name, value, min_val, max_val):
 # ========================
 # Visualization Functions
 # ========================
-def create_gauge_chart(probability, title, color_scheme):
+def create_gauge_chart(probability, title, bar_color):
     """Create a beautiful gauge chart for probability display"""
     fig = go.Figure(go.Indicator(
-        mode="gauge+number+delta",
+        mode="gauge+number",
         value=probability * 100,
         domain={'x': [0, 1], 'y': [0, 1]},
         title={'text': title, 'font': {'size': 24, 'color': 'white'}},
         number={'suffix': "%", 'font': {'size': 40, 'color': 'white'}},
         gauge={
             'axis': {'range': [0, 100], 'tickwidth': 1, 'tickcolor': "white"},
-            'bar': {'color': color_scheme},
+            'bar': {'color': bar_color, 'thickness': 0.75},
             'bgcolor': "rgba(255, 255, 255, 0.1)",
             'borderwidth': 2,
             'bordercolor': "rgba(255, 255, 255, 0.3)",
@@ -307,7 +306,7 @@ def main():
     # Header
     st.markdown("""
         <div style='text-align: center; padding: 20px 0;'>
-            <h1 style='font-size: 3rem; margin-bottom: 10px;'>❤️ Heart Failure Prediction</h1>
+            <h1 style='font-size: 3rem; margin-bottom: 10px;'>Heart Failure Prediction</h1>
             <p style='color: rgba(255, 255, 255, 0.7); font-size: 1.2rem;'>
                 AI-Powered Cardiovascular Risk Assessment
             </p>
@@ -420,7 +419,7 @@ def main():
             fig1 = create_gauge_chart(
                 probability[0], 
                 "Healthy Probability",
-                "linear-gradient(135deg, #48bb78 0%, #38a169 100%)"
+                "#48bb78"  # Green color
             )
             st.plotly_chart(fig1, use_container_width=True)
         
@@ -428,7 +427,7 @@ def main():
             fig2 = create_gauge_chart(
                 probability[1], 
                 "Heart Disease Probability",
-                "linear-gradient(135deg, #f56565 0%, #e53e3e 100%)"
+                "#f56565"  # Red color
             )
             st.plotly_chart(fig2, use_container_width=True)
         
