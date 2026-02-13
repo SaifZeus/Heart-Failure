@@ -1,4 +1,4 @@
-# ❤️ Heart Failure Prediction Dashboard
+# Heart Failure Prediction Dashboard
 
 A modern, professional web application built with Streamlit for predicting heart disease risk using Machine Learning.
 
@@ -185,12 +185,7 @@ Contributions are welcome! Please feel free to submit issues or pull requests.
 
 ## 📄 License
 
-This project is open source and available under the MIT License.
-
-## 📧 Support
-
-For questions or support, please open an issue in the repository.
-
+This project is open source
 ---
 
-**Built with ❤️ using Streamlit, scikit-learn, and Plotly**
+**Built using Streamlit, scikit-learn, and Plotly**
