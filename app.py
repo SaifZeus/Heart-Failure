@@ -1,6 +1,5 @@
 """
 Heart Failure Prediction Dashboard
-A modern, glassmorphism-styled Streamlit web application for predicting heart disease risk.
 """
 
 import streamlit as st
